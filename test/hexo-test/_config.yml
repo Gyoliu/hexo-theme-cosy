@@ -7,7 +7,7 @@ title: Hexo-Theme-Cosy
 subtitle: Cosy
 description: description
 keywords: keywords1,keywords2,keywords3
-author: John Doe
+author: Gyo
 language: en
 timezone: ""
 
@@ -133,3 +133,11 @@ algolia:
     - tags
     - title
 
+# Footer info
+footer:
+    since: 2024
+    # Customize the server domain name ICP
+    ICP:
+        enable: true
+        code: "粤ICP备18155512号-1"
+        link: "https://beian.miit.gov.cn/"

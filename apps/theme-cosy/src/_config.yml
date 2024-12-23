@@ -8,7 +8,16 @@ color: hsl(238,50%,56%)
 
 # 非必须
 # not required
-icp: 苏ICP备xxxxxxx号
+icp: 粤ICP备18155512号-1
+# Footer info
+footer:
+    enable: true
+    since: 2024
+    # Customize the server domain name ICP
+    ICP:
+        enable: true
+        code: "粤ICP备18155512号-1"
+        link: "https://beian.miit.gov.cn/"
 
 # 是否启用左侧栏搜索input
 # Is the left column search input enabled
@@ -43,6 +52,7 @@ mermaid:
 # 文章评论，请遵守相关地区法律法规
 # Article comments, please comply with relevant regional laws and regulations
 valine:
+  enable: false
   appId: yourValineAppId
   appKey: yourValineAppKey
   avatar: monsterid
@@ -52,10 +62,12 @@ valine:
 #Home Weather Card - Wind Weather, Free Registration API Please visit: https://id.qweather.com/#/register
 weather:
   enable: true
-  cityCode: 101190101
+  cityCode: 101280609
   appKey: 6f89c60ce1714fa58018b5489aa697e5
 
 twikoo:
+  enable: false
   envId: yourTwikooEnvId
   cdn: https://cdn.staticfile.org/twikoo/1.6.32/twikoo.all.min.js
   lang: zh-CN
+

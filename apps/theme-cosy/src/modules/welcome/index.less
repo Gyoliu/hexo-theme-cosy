@@ -1,11 +1,19 @@
 @import './linear.less';
 @import './circles.less';
 
+
+
 .welcome {
   position: relative;
   height: 100%;
   background-image: linear-gradient(to right, #80808012 1px, transparent 1px), linear-gradient(to bottom, #80808012 1px, transparent 1px);
   background-size: 50px 50px;
+
+  a {
+    color: #66afef;
+    text-decoration: none;
+    font-size: 10px;
+  }
 
   .slogan {
     position: absolute;
@@ -58,13 +66,79 @@
     }
   }
 
+  /* 打字特效容器 */
+  .typing-effect-container {
+    font-size: 30px;
+    font-family: fantasy;
+    white-space: nowrap;
+    overflow: hidden;
+    display: inline-block;
+    position: absolute;
+    min-width: 300px;
+    min-height: 36px;
+    top: 40%;
+    left: 38%;
+  }
+
+  /* 光标闪烁效果 */
+  #cursor {
+    display: inline-block;
+    animation: blink 0.8s infinite step-end;
+  }
+
+  /* 定义光标闪烁动画 */
+  @keyframes blink {
+    50% {
+      opacity: 0;
+    }
+  }
+
+  #crypto {
+    margin: 50px 0;
+  }
+  #crypto.failure {
+      border-color: #ea4a5a;
+      color: #ea4a5a;
+  }
+  #crypto.failure:focus {
+      box-shadow: 0 0 0 3px #ea4a5a4d;
+  }
+  #crypto.success {
+      border-color: #34d058;
+      color: #34d058;
+  }
+  #footer {
+      z-index: 1999;
+      font-size: 10px;
+      position: fixed;
+      bottom: 0;
+      text-align: center;
+      width: 100%;
+      margin: auto;
+  }
+  #footer #footer-icon {
+      color: #66afef;
+      display: inline-block;
+      font-size: 18px;
+      margin: 0 10px;
+  }
+  #footer #footer-wrap {
+      // border-top: 1px solid #aaa;
+      color: #5c6b72;
+      // margin: auto;
+      // margin-right: auto;
+      // width: 800px;
+  }
+  #footer #footer-wrap div {
+      margin: 15px;
+  }
+
   .icp {
     color: var(--color-font-1);
     position: absolute;
     bottom: 10px;
     left: 50%;
     transform: translateX(-50%);
-    z-index: 1999;
     font-size: calc(var(--font-size) * .8);
   }
 }
