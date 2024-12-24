@@ -6,6 +6,7 @@ onMounted(() => {
     const searchMask = new SearchMask({
       appId: window.algolia.appId,
       SearchOnlyAPIKey: window.algolia.SearchOnlyAPIKey,
+      indexName: window.algolia.indexName
     });
     addListener({
       selector: "#post-search",

@@ -16,18 +16,20 @@ export class SearchMask {
   constructor({
     appId,
     SearchOnlyAPIKey,
+    indexName,
   }: {
     appId: string;
     SearchOnlyAPIKey: string;
+    indexName: string;
   }) {
-    this.initAlgolia(appId, SearchOnlyAPIKey);
+    this.initAlgolia(appId, SearchOnlyAPIKey, indexName);
     this.initElements();
     this.bindEvents();
   }
 
-  private initAlgolia(appId: string, SearchOnlyAPIKey: string) {
+  private initAlgolia(appId: string, SearchOnlyAPIKey: string, indexName: string) {
     this.client = algoliasearch(appId, SearchOnlyAPIKey);
-    this.index = this.client.initIndex("hex-blog");
+    this.index = this.client.initIndex(indexName);
   }
 
   private initElements() {

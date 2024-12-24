@@ -34,6 +34,10 @@
           <h1 class="post-title"><%- page.title %></h1>
           <div class="last-updated">
             <%- __('text-post-last-update') %>: <%- page.updated.format('YYYY-MM-DD HH:mm:ss') %>
+            <span class="post-meta-item-text">字数统计:</span>
+            <span class="post-count"><%= wordcount(page.content) %></span>
+            <span class="post-meta-item-text">阅读时间:</span>
+            <span class="post-count"><%= min2read(page.content) %> min</span>
           </div>
           <!-- 文章 -->
           <%- page.content %>
