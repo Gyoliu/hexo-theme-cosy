@@ -187,6 +187,20 @@ export class SearchMask {
     this.maskElement.style.display = "none";
   }
 
+  
+  /**
+   * 防抖函数
+   * @param fn 需要执行的函数
+   * @param time 间隔时间
+   * @returns 
+   */
+  public debounce(time = 1000) {
+    const self = this; 
+    let timeout: number | null = null;
+    timeout && clearTimeout(timeout);
+    timeout = setTimeout(() => self.performSearch(), time);
+  }
+
   private bindEvents() {
     this.maskElement.addEventListener("click", (e) => {
       if (e.target === this.maskElement) {
@@ -196,9 +210,8 @@ export class SearchMask {
         this.searchInputElement.focus();
       }
     });
-
     this.searchInputElement.addEventListener("input", () =>
-      this.performSearch()
+      this.debounce()
     );
 
     document.addEventListener("keydown", (e) => {
